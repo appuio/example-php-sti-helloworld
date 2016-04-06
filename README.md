@@ -4,12 +4,22 @@ This is an example php application, which can be deployed to APPUiO using the fo
 
 ## How to deploy
 
-### Create New OpenShift Project
+### Webconsole
+
+* log into your OpenShift V3 Master (eg. https://master.appuio-beta.ch)
+* Create a new Project
+* "Add to Project" a php:5.6 application
+* name the application for example appuio-php-sti-example and provide the git repository URL, in this example https://github.com/appuio/example-php-sti-helloworld.git
+* the build and deployment is automatically triggered and the example application will be deployed soon
+
+### CLI / oc Client
+
+#### Create New OpenShift Project
 ```
 $ oc new-project example-php-sti-helloworld
 ```
 
-### Create Application and expose Service
+#### Create Application and expose Service
 ```
 $ oc new-app https://github.com/appuio/example-php-sti-helloworld.git --name=appuio-php-sti-example
 
