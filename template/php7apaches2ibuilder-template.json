@@ -1,0 +1,87 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "php7apaches2ibuilder",
+        "creationTimestamp": null
+    },
+    "objects": [
+        {
+            "kind": "BuildConfig",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "php7-apache-s2i",
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "php7-apache-s2i"
+                },
+                "annotations": {
+                    "openshift.io/generated-by": "OpenShiftNewApp"
+                }
+            },
+            "spec": {
+                "triggers": [
+                    {
+                        "type": "GitHub",
+                        "github": {
+                            "secret": "EKrZPdgkwbvz_l7VgXCL"
+                        }
+                    },
+                    {
+                        "type": "Generic",
+                        "generic": {
+                            "secret": "8JL5mYnqYjiz6yxl1W29"
+                        }
+                    },
+                    {
+                        "type": "ConfigChange"
+                    },
+                    {
+                        "type": "ImageChange",
+                        "imageChange": {}
+                    }
+                ],
+                "source": {
+                    "type": "Git",
+                    "git": {
+                        "uri": "https://github.com/getupcloud/sti-php.git"
+                    },
+                    "contextDir": "7.0",
+                    "secrets": []
+                },
+                "strategy": {
+                    "type": "Docker"
+                },
+                "output": {
+                    "to": {
+                        "kind": "ImageStreamTag",
+                        "name": "php7-apache-s2i:latest"
+                    }
+                },
+                "resources": {},
+                "postCommit": {}
+            },
+            "status": {
+                "lastVersion": 0
+            }
+        },
+        {
+            "kind": "ImageStream",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "php7-apache-s2i",
+                "generation": 1,
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "php7-apache-s2i"
+                },
+                "annotations": {
+                    "openshift.io/generated-by": "OpenShiftNewApp"
+                }
+            },
+            "status": {
+                "dockerImageRepository": ""
+            }
+        }
+    ]
+}
