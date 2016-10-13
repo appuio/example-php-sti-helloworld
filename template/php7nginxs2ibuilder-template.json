@@ -44,7 +44,7 @@
                 "source": {
                     "type": "Git",
                     "git": {
-                        "uri": "https://github.com/codecasts/s2i-nginx-php7-container.git"
+                        "uri": "https://github.com/appuio/s2i-nginx-php7-container.git"
                     },
                     "contextDir": "7.0",
                     "secrets": []
