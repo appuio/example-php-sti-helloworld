@@ -54,7 +54,7 @@
 
       <div class="starter-template">
         <h1>Hallo <?php echo 'APPUiO'?></h1>
-        <p class="lead">LALALALALALA</p>
+        <p class="lead">Party</p>
       </div>
 
     </div><!-- /.container -->
